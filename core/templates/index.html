@@ -1,0 +1,17 @@
+{% extends "common_elements/base_skeleton.html" %}
+
+{% block title %}Home{% endblock %}
+
+{% block content %}
+
+    <h4>Welcome User.</h4>
+
+<form name="name_form" action="{% url 'welcome_page' %}" method="post">{% csrf_token %}
+    <label for="name"><h5>Please enter your name below to continue.</h5></label>
+    {{ form.name }} {{ form.name.errors }}
+    <input type="submit" value="OK">
+</form>
+{% endblock %}
+
+{% block script %}
+{% endblock %}
